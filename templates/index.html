@@ -1,0 +1,58 @@
+<html>
+    <head>
+      <title>Mail Classifier</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+      <!-- <link rel="stylesheet" href="/styles.css" /> -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+
+    </head>
+    
+    <body>
+      
+      <!-- nav bar -->
+      <header id="header">
+        <div class="header-content-div">
+          <a href="/">
+            <img
+              src="/static/spam.png"
+              alt="Company Logo"
+              id="header-img"
+          />
+          </a>
+          <nav id="nav-bar">
+            <a href="#home-sec" class="nav-link">Mail Classifier</a>
+          </nav>
+        </div>
+      </header>
+  
+      <main>
+        <section id="home-sec" class="flexible home-sec">
+          <div class="eye-grabber-img" style="margin-top: 7rem;">
+          </div>
+          <div class="eye-grabber" style="margin-top: 4rem; background-color:white;">
+            <h1> Mail Classifier</h1>
+              <form action="/predict" method="post">
+                <textarea name="message" rows="4" cols="50" required></textarea><br>
+                <button type="submit" class="btn">Predict</button>
+            </form>
+            {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+            {% endif %}           
+          </div>
+        </section>     
+      <footer>
+        Created by
+        <a href="#"> L </a>
+      </footer>
+    </body>
+  </html>
+       
+       
+       
+       
+       
+       
+
+   
+    
